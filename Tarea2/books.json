@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "title": "Clean Code",
+    "edition": "1",
+    "copyright": 2008,
+    "language": "English",
+    "pages": 464,
+    "author": "Robert C. Martin",
+    "publisher": "Prentice Hall"
+  },
+  {
+    "id": 3,
+    "title": "Nuevo libro",
+    "edition": "1",
+    "copyright": 2024,
+    "language": "Español",
+    "pages": 300,
+    "author": "Autor de prueba",
+    "publisher": "Editorial X"
+  }
+]
