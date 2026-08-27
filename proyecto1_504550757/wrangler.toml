@@ -1,0 +1,12 @@
+name = "misiones-espaciales"
+compatibility_date = "2025-07-15"
+main = "./.output/server/index.mjs"
+
+[assets]
+directory = "./.output/public"
+binding = "ASSETS"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "misiones-espaciales-db"
+database_id = "REEMPLAZAR_CON_ID_REAL"

@@ -1,0 +1,26 @@
+{
+  "name": "proyecto1_504550757",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "deploy": "nuxt build && wrangler deploy",
+    "db:migrate:local": "wrangler d1 execute misiones-espaciales-db --local --file=./db/schema.sql",
+    "db:seed:local": "wrangler d1 execute misiones-espaciales-db --local --file=./db/seed.sql",
+    "db:migrate:remote": "wrangler d1 execute misiones-espaciales-db --remote --file=./db/schema.sql",
+    "db:seed:remote": "wrangler d1 execute misiones-espaciales-db --remote --file=./db/seed.sql"
+  },
+  "dependencies": {
+    "nuxt": "^4.5.2",
+    "vue": "^3.5.41",
+    "vue-router": "^5.2.0"
+  },
+  "devDependencies": {
+    "nitro-cloudflare-dev": "^0.2.2",
+    "wrangler": "^4.126.0"
+  }
+}
