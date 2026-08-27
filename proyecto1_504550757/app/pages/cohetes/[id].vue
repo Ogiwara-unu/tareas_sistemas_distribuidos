@@ -47,7 +47,7 @@ const campos = [
 
 <template>
   <main class="page" v-if="cohete">
-    <NuxtLink to="/cohetes">&larr; Volver a cohetes</NuxtLink>
+    <NuxtLink to="/cohetes" class="back-link">&larr; Volver a cohetes</NuxtLink>
     <p v-if="error" class="error">{{ error }}</p>
 
     <div v-if="!editando">
@@ -64,7 +64,7 @@ const campos = [
           <ul v-if="cohete.misiones?.length" class="related-list">
             <li v-for="m in cohete.misiones" :key="m.id">
               <NuxtLink :to="`/misiones/${m.id}`">{{ m.nombre }}</NuxtLink>
-              — {{ m.fecha_lanzamiento }} ({{ m.estado }})
+              - {{ m.fecha_lanzamiento }} ({{ m.estado }})
             </li>
           </ul>
           <p v-else class="muted">Sin misiones registradas todavía.</p>
@@ -77,12 +77,15 @@ const campos = [
       </div>
     </div>
 
-    <form v-else @submit.prevent="guardar">
-      <EntityForm v-model="cohete" :fields="campos" />
-      <div class="actions-row">
-        <button type="submit">Guardar</button>
-        <button type="button" class="secondary" @click="editando = false">Cancelar</button>
-      </div>
-    </form>
+    <section v-else class="form-panel">
+      <h2>Editar cohete</h2>
+      <form @submit.prevent="guardar">
+        <EntityForm v-model="cohete" :fields="campos" />
+        <div class="actions-row">
+          <button type="submit">Guardar</button>
+          <button type="button" class="secondary" @click="editando = false">Cancelar</button>
+        </div>
+      </form>
+    </section>
   </main>
 </template>

@@ -26,6 +26,17 @@ async function crear() {
   }
 }
 
+const stackItems = computed(() =>
+  agencias.value.map((a) => ({
+    id: a.id,
+    title: a.nombre,
+    subtitle: `${a.pais} · fundada en ${a.anio_fundacion}`,
+    imageUrl: a.imagen_url,
+    to: `/agencias/${a.id}`,
+    fallbackIcon: '🏛️'
+  }))
+)
+
 async function borrar(id: number) {
   if (!confirm('¿Borrar esta agencia?')) return
   try {
@@ -49,25 +60,19 @@ const campos = [
 
 <template>
   <main class="page">
-    <NuxtLink to="/">&larr; Volver al inicio</NuxtLink>
-    <h1>🏛️ Agencias espaciales</h1>
+    <NuxtLink to="/" class="back-link">&larr; Volver al inicio</NuxtLink>
+    <span class="eyebrow">🏛️ Catálogo</span>
+    <h1>Agencias <em>espaciales</em></h1>
     <p v-if="error" class="error">{{ error }}</p>
 
-    <ul class="cards">
-      <li v-for="a in agencias" :key="a.id">
-        <NuxtLink :to="`/agencias/${a.id}`" class="card">
-          <img v-if="a.imagen_url" :src="a.imagen_url" :alt="a.nombre" />
-          <h3>{{ a.nombre }}</h3>
-          <p class="muted">{{ a.pais }} · fundada en {{ a.anio_fundacion }}</p>
-        </NuxtLink>
-        <button class="danger" @click="borrar(a.id)">Borrar</button>
-      </li>
-    </ul>
+    <CardStack :items="stackItems" @delete="borrar" />
 
-    <h2>Nueva agencia</h2>
-    <form @submit.prevent="crear">
-      <EntityForm v-model="nuevaAgencia" :fields="campos" />
-      <button type="submit">Crear agencia</button>
-    </form>
+    <section class="form-panel">
+      <h2>Nueva agencia</h2>
+      <form @submit.prevent="crear">
+        <EntityForm v-model="nuevaAgencia" :fields="campos" />
+        <button type="submit">Crear agencia</button>
+      </form>
+    </section>
   </main>
 </template>

@@ -26,6 +26,17 @@ async function crear() {
   }
 }
 
+const stackItems = computed(() =>
+  cohetes.value.map((c) => ({
+    id: c.id,
+    title: c.nombre,
+    subtitle: c.fabricante,
+    imageUrl: c.imagen_url,
+    to: `/cohetes/${c.id}`,
+    fallbackIcon: '🚀'
+  }))
+)
+
 async function borrar(id: number) {
   if (!confirm('¿Borrar este cohete?')) return
   try {
@@ -49,26 +60,19 @@ const campos = [
 
 <template>
   <main class="page">
-    <NuxtLink to="/">&larr; Volver al inicio</NuxtLink>
-    <h1>🚀 Cohetes</h1>
+    <NuxtLink to="/" class="back-link">&larr; Volver al inicio</NuxtLink>
+    <span class="eyebrow">🚀 Catálogo</span>
+    <h1>Cohetes <em>espaciales</em></h1>
     <p v-if="error" class="error">{{ error }}</p>
 
-    <ul class="cards">
-      <li v-for="c in cohetes" :key="c.id">
-        <NuxtLink :to="`/cohetes/${c.id}`" class="card">
-          <img v-if="c.imagen_url" :src="c.imagen_url" :alt="c.nombre" />
-          <h3>{{ c.nombre }}</h3>
-          <p class="muted">{{ c.fabricante }}</p>
-          <p class="muted">{{ c.altura_m }} m · {{ c.masa_despegue_kg }} kg</p>
-        </NuxtLink>
-        <button class="danger" @click="borrar(c.id)">Borrar</button>
-      </li>
-    </ul>
+    <CardStack :items="stackItems" @delete="borrar" />
 
-    <h2>Nuevo cohete</h2>
-    <form @submit.prevent="crear">
-      <EntityForm v-model="nuevoCohete" :fields="campos" />
-      <button type="submit">Crear cohete</button>
-    </form>
+    <section class="form-panel">
+      <h2>Nuevo cohete</h2>
+      <form @submit.prevent="crear">
+        <EntityForm v-model="nuevoCohete" :fields="campos" />
+        <button type="submit">Crear cohete</button>
+      </form>
+    </section>
   </main>
 </template>

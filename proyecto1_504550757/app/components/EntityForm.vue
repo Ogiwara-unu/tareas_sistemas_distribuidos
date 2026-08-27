@@ -12,7 +12,7 @@ const model = defineModel<Record<string, any>>({ required: true })
 </script>
 
 <template>
-  <div v-for="f in fields" :key="f.key" class="field">
+  <div v-for="f in fields" :key="f.key" :class="['field', f.type === 'textarea' ? 'field-full' : '']">
     <span>{{ f.label }}</span>
     <select v-if="f.type === 'select'" v-model="model[f.key]">
       <option value="" disabled>Selecciona...</option>

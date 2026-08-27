@@ -3,14 +3,27 @@ useHead({ title: 'Catálogo de misiones espaciales' })
 </script>
 
 <template>
-  <main class="page">
-    <h1>🚀 Catálogo de misiones espaciales</h1>
-    <p class="muted">Proyecto 1 — Sistemas Distribuidos. Explora misiones, agencias espaciales y cohetes.</p>
-
-    <div class="home-grid">
-      <NuxtLink to="/misiones" class="home-card">🛰️ Misiones</NuxtLink>
-      <NuxtLink to="/agencias" class="home-card">🏛️ Agencias</NuxtLink>
-      <NuxtLink to="/cohetes" class="home-card">🚀 Cohetes</NuxtLink>
+  <div class="hero">
+    <ShaderLines />
+    <div class="hero-inner">
+      <div class="hero-top">
+        <h1 class="hero-headline">Explora el<br /><em>cosmos</em></h1>
+        <div class="hero-note">
+          <p>Catálogo de misiones, agencias y cohetes espaciales. Proyecto de Sistemas Distribuidos.</p>
+        </div>
+      </div>
+      <div class="hero-bottom">
+        <div class="hero-categories">
+          <span class="hero-label">Explora</span>
+          <nav class="hero-links">
+            <NuxtLink to="/misiones">Misiones</NuxtLink>
+            <span>/</span>
+            <NuxtLink to="/agencias">Agencias</NuxtLink>
+            <span>/</span>
+            <NuxtLink to="/cohetes">Cohetes</NuxtLink>
+          </nav>
+        </div>
+      </div>
     </div>
-  </main>
+  </div>
 </template>

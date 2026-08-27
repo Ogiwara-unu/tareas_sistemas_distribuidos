@@ -31,6 +31,19 @@ async function cargarListas() {
   cohetes.value = await $fetch('/api/cohetes')
 }
 
+const stackItems = computed(() =>
+  misiones.value.map((m) => ({
+    id: m.id,
+    title: m.nombre,
+    subtitle: `${m.fecha_lanzamiento} · ${m.destino}`,
+    imageUrl: m.imagen_url,
+    to: `/misiones/${m.id}`,
+    fallbackIcon: '🛰️',
+    badge: m.estado,
+    badgeClass: `tag tag-${String(m.estado).replace(' ', '-')}`
+  }))
+)
+
 async function crear() {
   error.value = ''
   try {
@@ -87,27 +100,19 @@ const campos = computed(() => [
 
 <template>
   <main class="page">
-    <NuxtLink to="/">&larr; Volver al inicio</NuxtLink>
-    <h1>🛰️ Misiones espaciales</h1>
+    <NuxtLink to="/" class="back-link">&larr; Volver al inicio</NuxtLink>
+    <span class="eyebrow">🛰️ Catálogo</span>
+    <h1>Misiones <em>espaciales</em></h1>
     <p v-if="error" class="error">{{ error }}</p>
 
-    <ul class="cards">
-      <li v-for="m in misiones" :key="m.id">
-        <NuxtLink :to="`/misiones/${m.id}`" class="card">
-          <img v-if="m.imagen_url" :src="m.imagen_url" :alt="m.nombre" />
-          <h3>{{ m.nombre }}</h3>
-          <p class="muted">{{ m.fecha_lanzamiento }} · {{ m.destino }}</p>
-          <span class="tag">{{ m.estado }}</span>
-          <p class="muted">{{ m.agencia_nombre }} · {{ m.cohete_nombre }}</p>
-        </NuxtLink>
-        <button class="danger" @click="borrar(m.id)">Borrar</button>
-      </li>
-    </ul>
+    <CardStack :items="stackItems" @delete="borrar" />
 
-    <h2>Nueva misión</h2>
-    <form @submit.prevent="crear">
-      <EntityForm v-model="nuevaMision" :fields="campos" />
-      <button type="submit">Crear misión</button>
-    </form>
+    <section class="form-panel">
+      <h2>Nueva misión</h2>
+      <form @submit.prevent="crear">
+        <EntityForm v-model="nuevaMision" :fields="campos" />
+        <button type="submit">Crear misión</button>
+      </form>
+    </section>
   </main>
 </template>

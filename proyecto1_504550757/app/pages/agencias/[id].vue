@@ -47,7 +47,7 @@ const campos = [
 
 <template>
   <main class="page" v-if="agencia">
-    <NuxtLink to="/agencias">&larr; Volver a agencias</NuxtLink>
+    <NuxtLink to="/agencias" class="back-link">&larr; Volver a agencias</NuxtLink>
     <p v-if="error" class="error">{{ error }}</p>
 
     <div v-if="!editando">
@@ -66,7 +66,7 @@ const campos = [
           <ul v-if="agencia.misiones?.length" class="related-list">
             <li v-for="m in agencia.misiones" :key="m.id">
               <NuxtLink :to="`/misiones/${m.id}`">{{ m.nombre }}</NuxtLink>
-              — {{ m.fecha_lanzamiento }} ({{ m.estado }})
+              - {{ m.fecha_lanzamiento }} ({{ m.estado }})
             </li>
           </ul>
           <p v-else class="muted">Sin misiones registradas todavía.</p>
@@ -79,12 +79,15 @@ const campos = [
       </div>
     </div>
 
-    <form v-else @submit.prevent="guardar">
-      <EntityForm v-model="agencia" :fields="campos" />
-      <div class="actions-row">
-        <button type="submit">Guardar</button>
-        <button type="button" class="secondary" @click="editando = false">Cancelar</button>
-      </div>
-    </form>
+    <section v-else class="form-panel">
+      <h2>Editar agencia</h2>
+      <form @submit.prevent="guardar">
+        <EntityForm v-model="agencia" :fields="campos" />
+        <div class="actions-row">
+          <button type="submit">Guardar</button>
+          <button type="button" class="secondary" @click="editando = false">Cancelar</button>
+        </div>
+      </form>
+    </section>
   </main>
 </template>

@@ -76,12 +76,12 @@ const campos = computed(() => [
 
 <template>
   <main class="page" v-if="mision">
-    <NuxtLink to="/misiones">&larr; Volver a misiones</NuxtLink>
+    <NuxtLink to="/misiones" class="back-link">&larr; Volver a misiones</NuxtLink>
     <p v-if="error" class="error">{{ error }}</p>
 
     <div v-if="!editando">
       <h1>{{ mision.nombre }}</h1>
-      <span class="tag">{{ mision.estado }}</span>
+      <span :class="['tag', `tag-${mision.estado.replace(' ', '-')}`]">{{ mision.estado }}</span>
 
       <div class="detail">
         <img v-if="mision.imagen_url" :src="mision.imagen_url" :alt="mision.nombre" />
@@ -106,12 +106,15 @@ const campos = computed(() => [
       </div>
     </div>
 
-    <form v-else @submit.prevent="guardar">
-      <EntityForm v-model="mision" :fields="campos" />
-      <div class="actions-row">
-        <button type="submit">Guardar</button>
-        <button type="button" class="secondary" @click="editando = false">Cancelar</button>
-      </div>
-    </form>
+    <section v-else class="form-panel">
+      <h2>Editar misión</h2>
+      <form @submit.prevent="guardar">
+        <EntityForm v-model="mision" :fields="campos" />
+        <div class="actions-row">
+          <button type="submit">Guardar</button>
+          <button type="button" class="secondary" @click="editando = false">Cancelar</button>
+        </div>
+      </form>
+    </section>
   </main>
 </template>
