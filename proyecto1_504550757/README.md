@@ -1,7 +1,7 @@
 # Catálogo de misiones espaciales
 
 **Estudiante:** Randall Alvarez
-**Enlace publicado:** _pendiente — completar tras ejecutar `wrangler deploy`_
+**Enlace publicado:** https://misiones-espaciales.proyecto1-504550757.workers.dev
 
 Proyecto 1 de Sistemas Distribuidos: catálogo temático (tema #22 — misiones espaciales) construido con
 [Nuxt 3](https://nuxt.com) desplegado como un único Cloudflare Worker (FaaS) que sirve tanto el frontend Vue

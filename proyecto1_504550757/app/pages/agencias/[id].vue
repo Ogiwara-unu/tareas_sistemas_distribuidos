@@ -54,19 +54,21 @@ const campos = [
       <h1>{{ agencia.nombre }}</h1>
 
       <div class="detail">
-        <img v-if="agencia.imagen_url" :src="agencia.imagen_url" :alt="agencia.nombre" />
-        <div>
-          <p><strong>País:</strong> {{ agencia.pais }}</p>
-          <p><strong>Año de fundación:</strong> {{ agencia.anio_fundacion }}</p>
-          <p v-if="agencia.sitio_web">
-            <strong>Sitio web:</strong> <a :href="agencia.sitio_web" target="_blank" rel="noopener">{{ agencia.sitio_web }}</a>
+        <div class="detail-media">
+          <img v-if="agencia.imagen_url" :src="agencia.imagen_url" :alt="agencia.nombre" />
+        </div>
+        <div class="detail-info">
+          <p class="spec-row"><strong>País</strong> {{ agencia.pais }}</p>
+          <p class="spec-row"><strong>Año de fundación</strong> {{ agencia.anio_fundacion }}</p>
+          <p v-if="agencia.sitio_web" class="spec-row">
+            <strong>Sitio web</strong> <a :href="agencia.sitio_web" target="_blank" rel="noopener">{{ agencia.sitio_web }}</a>
           </p>
 
           <h3>Misiones de esta agencia</h3>
           <ul v-if="agencia.misiones?.length" class="related-list">
             <li v-for="m in agencia.misiones" :key="m.id">
               <NuxtLink :to="`/misiones/${m.id}`">{{ m.nombre }}</NuxtLink>
-              - {{ m.fecha_lanzamiento }} ({{ m.estado }})
+              <span>{{ m.fecha_lanzamiento }} &middot; {{ m.estado }}</span>
             </li>
           </ul>
           <p v-else class="muted">Sin misiones registradas todavía.</p>

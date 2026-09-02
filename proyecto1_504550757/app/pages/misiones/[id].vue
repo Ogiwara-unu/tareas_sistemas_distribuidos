@@ -84,19 +84,21 @@ const campos = computed(() => [
       <span :class="['tag', `tag-${mision.estado.replace(' ', '-')}`]">{{ mision.estado }}</span>
 
       <div class="detail">
-        <img v-if="mision.imagen_url" :src="mision.imagen_url" :alt="mision.nombre" />
-        <div>
-          <p><strong>Fecha de lanzamiento:</strong> {{ mision.fecha_lanzamiento }}</p>
-          <p><strong>Destino:</strong> {{ mision.destino }}</p>
-          <p>
-            <strong>Agencia:</strong>
+        <div class="detail-media">
+          <img v-if="mision.imagen_url" :src="mision.imagen_url" :alt="mision.nombre" />
+        </div>
+        <div class="detail-info">
+          <p class="spec-row"><strong>Fecha de lanzamiento</strong> {{ mision.fecha_lanzamiento }}</p>
+          <p class="spec-row"><strong>Destino</strong> {{ mision.destino }}</p>
+          <p class="spec-row">
+            <strong>Agencia</strong>
             <NuxtLink :to="`/agencias/${mision.agencia_id}`">{{ mision.agencia_nombre }}</NuxtLink>
           </p>
-          <p>
-            <strong>Cohete:</strong>
+          <p class="spec-row">
+            <strong>Cohete</strong>
             <NuxtLink :to="`/cohetes/${mision.cohete_id}`">{{ mision.cohete_nombre }}</NuxtLink>
           </p>
-          <p>{{ mision.descripcion }}</p>
+          <p v-if="mision.descripcion" class="detail-desc">{{ mision.descripcion }}</p>
         </div>
       </div>
 

@@ -54,17 +54,19 @@ const campos = [
       <h1>{{ cohete.nombre }}</h1>
 
       <div class="detail">
-        <img v-if="cohete.imagen_url" :src="cohete.imagen_url" :alt="cohete.nombre" />
-        <div>
-          <p><strong>Fabricante:</strong> {{ cohete.fabricante }}</p>
-          <p><strong>Altura:</strong> {{ cohete.altura_m }} m</p>
-          <p><strong>Masa de despegue:</strong> {{ cohete.masa_despegue_kg }} kg</p>
+        <div class="detail-media">
+          <img v-if="cohete.imagen_url" :src="cohete.imagen_url" :alt="cohete.nombre" />
+        </div>
+        <div class="detail-info">
+          <p class="spec-row"><strong>Fabricante</strong> {{ cohete.fabricante }}</p>
+          <p class="spec-row"><strong>Altura</strong> {{ cohete.altura_m }} m</p>
+          <p class="spec-row"><strong>Masa de despegue</strong> {{ cohete.masa_despegue_kg }} kg</p>
 
           <h3>Misiones que usaron este cohete</h3>
           <ul v-if="cohete.misiones?.length" class="related-list">
             <li v-for="m in cohete.misiones" :key="m.id">
               <NuxtLink :to="`/misiones/${m.id}`">{{ m.nombre }}</NuxtLink>
-              - {{ m.fecha_lanzamiento }} ({{ m.estado }})
+              <span>{{ m.fecha_lanzamiento }} &middot; {{ m.estado }}</span>
             </li>
           </ul>
           <p v-else class="muted">Sin misiones registradas todavía.</p>

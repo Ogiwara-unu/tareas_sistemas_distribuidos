@@ -9,4 +9,4 @@ binding = "ASSETS"
 [[d1_databases]]
 binding = "DB"
 database_name = "misiones-espaciales-db"
-database_id = "REEMPLAZAR_CON_ID_REAL"
+database_id = "260e94ad-558e-47b1-9390-f72c78e3e3bd"
