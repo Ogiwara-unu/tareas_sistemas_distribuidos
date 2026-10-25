@@ -1,0 +1,347 @@
+{
+  "agencias": [
+    {
+      "id": 1,
+      "nombre": "NASA",
+      "pais": "Estados Unidos",
+      "anio_fundacion": 1958,
+      "sitio_web": "https://www.nasa.gov",
+      "imagen_url": "https://upload.wikimedia.org/wikipedia/commons/e/e5/NASA_logo.svg"
+    },
+    {
+      "id": 2,
+      "nombre": "ESA (Agencia Espacial Europea)",
+      "pais": "Francia (sede en París)",
+      "anio_fundacion": 1975,
+      "sitio_web": "https://www.esa.int",
+      "imagen_url": "https://upload.wikimedia.org/wikipedia/commons/b/bd/European_Space_Agency_logo.svg"
+    },
+    {
+      "id": 3,
+      "nombre": "Roscosmos",
+      "pais": "Rusia",
+      "anio_fundacion": 1992,
+      "sitio_web": "https://www.roscosmos.ru",
+      "imagen_url": "https://upload.wikimedia.org/wikipedia/commons/d/da/Roscosmos_logo_ru.svg"
+    },
+    {
+      "id": 4,
+      "nombre": "ISRO",
+      "pais": "India",
+      "anio_fundacion": 1969,
+      "sitio_web": "https://www.isro.gov.in",
+      "imagen_url": "https://upload.wikimedia.org/wikipedia/commons/b/bd/Indian_Space_Research_Organisation_Logo.svg"
+    },
+    {
+      "id": 5,
+      "nombre": "JAXA",
+      "pais": "Japón",
+      "anio_fundacion": 2003,
+      "sitio_web": "https://www.jaxa.jp",
+      "imagen_url": "https://upload.wikimedia.org/wikipedia/commons/8/85/Jaxa_logo.svg"
+    },
+    {
+      "id": 6,
+      "nombre": "SpaceX",
+      "pais": "Estados Unidos",
+      "anio_fundacion": 2002,
+      "sitio_web": "https://www.spacex.com",
+      "imagen_url": "https://upload.wikimedia.org/wikipedia/commons/d/de/SpaceX-Logo.svg"
+    },
+    {
+      "id": 7,
+      "nombre": "CNSA",
+      "pais": "China",
+      "anio_fundacion": 1993,
+      "sitio_web": "http://www.cnsa.gov.cn",
+      "imagen_url": "https://upload.wikimedia.org/wikipedia/commons/b/b2/Insignia_of_CNSA.svg"
+    }
+  ],
+  "cohetes": [
+    {
+      "id": 1,
+      "nombre": "Saturn V",
+      "fabricante": "Boeing / North American Rockwell / Douglas (NASA)",
+      "altura_m": 110.6,
+      "masa_despegue_kg": 2970000,
+      "imagen_url": "https://upload.wikimedia.org/wikipedia/commons/1/16/Apollo_11_Launch_-_GPN-2000-000630.jpg"
+    },
+    {
+      "id": 2,
+      "nombre": "Falcon 9",
+      "fabricante": "SpaceX",
+      "altura_m": 70,
+      "masa_despegue_kg": 549054,
+      "imagen_url": "https://upload.wikimedia.org/wikipedia/commons/0/0e/CRS-9_mission_%2828348649546%29.jpg"
+    },
+    {
+      "id": 3,
+      "nombre": "Falcon Heavy",
+      "fabricante": "SpaceX",
+      "altura_m": 70,
+      "masa_despegue_kg": 1420788,
+      "imagen_url": "https://upload.wikimedia.org/wikipedia/commons/5/59/Falcon_Heavy_Demo_Mission_%2840126461851%29.jpg"
+    },
+    {
+      "id": 4,
+      "nombre": "Soyuz (2.1a)",
+      "fabricante": "RKK Energía / Progress Rocket Space Centre",
+      "altura_m": 46.3,
+      "masa_despegue_kg": 312000,
+      "imagen_url": "https://upload.wikimedia.org/wikipedia/commons/9/9a/Soyuz_TMA-9_launch.jpg"
+    },
+    {
+      "id": 5,
+      "nombre": "Ariane 5",
+      "fabricante": "Arianespace / ESA",
+      "altura_m": 52,
+      "masa_despegue_kg": 777000,
+      "imagen_url": "https://upload.wikimedia.org/wikipedia/commons/d/d2/James_Webb_Space_Telescope_Launch_%28NHQ202112250022%29.jpg"
+    },
+    {
+      "id": 6,
+      "nombre": "Atlas V",
+      "fabricante": "United Launch Alliance",
+      "altura_m": 58.3,
+      "masa_despegue_kg": 334500,
+      "imagen_url": "https://upload.wikimedia.org/wikipedia/commons/b/be/Mars_2020_Perseverance_Launch_%28NHQ202007300008%29.jpg"
+    },
+    {
+      "id": 7,
+      "nombre": "Space Launch System (Block 1)",
+      "fabricante": "Boeing (NASA)",
+      "altura_m": 98.1,
+      "masa_despegue_kg": 2608000,
+      "imagen_url": "https://upload.wikimedia.org/wikipedia/commons/b/b9/Artemis_I_Launch_%28NHQ202211160017%29.jpg"
+    },
+    {
+      "id": 8,
+      "nombre": "PSLV-XL",
+      "fabricante": "ISRO",
+      "altura_m": 44.4,
+      "masa_despegue_kg": 320000,
+      "imagen_url": "https://upload.wikimedia.org/wikipedia/commons/d/dc/Mars_Orbitor_Mission_Launch.jpg"
+    },
+    {
+      "id": 9,
+      "nombre": "Long March 5",
+      "fabricante": "CASC (CNSA)",
+      "altura_m": 57,
+      "masa_despegue_kg": 869000,
+      "imagen_url": "https://upload.wikimedia.org/wikipedia/commons/4/4e/Launch_of_Chang%27e_5.png"
+    },
+    {
+      "id": 10,
+      "nombre": "Titan IIIE-Centaur",
+      "fabricante": "Martin Marietta (NASA)",
+      "altura_m": 48.5,
+      "masa_despegue_kg": 633000,
+      "imagen_url": "https://upload.wikimedia.org/wikipedia/commons/a/a4/Titan_3E_Centaur_launches_Voyager_2.jpg"
+    },
+    {
+      "id": 11,
+      "nombre": "LVM3 (GSLV Mk III)",
+      "fabricante": "ISRO",
+      "altura_m": 43.4,
+      "masa_despegue_kg": 640000,
+      "imagen_url": "https://upload.wikimedia.org/wikipedia/commons/c/c5/LVM3_M4%2C_Chandrayaan-3_-_Launch_vehicle_lifting_off_from_the_Second_Launch_Pad_%28SLP%29_of_SDSC-SHAR%2C_Sriharikota_%28edit%29.jpg"
+    },
+    {
+      "id": 12,
+      "nombre": "H-IIA",
+      "fabricante": "Mitsubishi Heavy Industries (JAXA)",
+      "altura_m": 53,
+      "masa_despegue_kg": 289000,
+      "imagen_url": "https://upload.wikimedia.org/wikipedia/commons/8/81/H-IIA_rocket_carrying_GPM_at_Tanegashima_%28201402270013HQ%29.jpg"
+    }
+  ],
+  "misiones": [
+    {
+      "id": 1,
+      "nombre": "Apollo 11",
+      "fecha_lanzamiento": "1969-07-16",
+      "destino": "Luna",
+      "estado": "completada",
+      "descripcion": "Primera misión tripulada en posar seres humanos en la Luna; Armstrong y Aldrin caminaron sobre la superficie lunar mientras Collins orbitaba en el módulo de mando.",
+      "imagen_url": "https://upload.wikimedia.org/wikipedia/commons/1/16/Apollo_11_Launch_-_GPN-2000-000630.jpg",
+      "agencia_id": 1,
+      "cohete_id": 1
+    },
+    {
+      "id": 2,
+      "nombre": "Apollo 13",
+      "fecha_lanzamiento": "1970-04-11",
+      "destino": "Luna",
+      "estado": "fallida",
+      "descripcion": "Una explosión en un tanque de oxígeno obligó a abortar el alunizaje; la tripulación regresó a salvo a la Tierra gracias a un rescate improvisado.",
+      "imagen_url": "https://upload.wikimedia.org/wikipedia/commons/d/d2/Apollo_13_liftoff-KSC-70PC-160HR.jpg",
+      "agencia_id": 1,
+      "cohete_id": 1
+    },
+    {
+      "id": 3,
+      "nombre": "Artemis I",
+      "fecha_lanzamiento": "2022-11-16",
+      "destino": "Luna (órbita)",
+      "estado": "completada",
+      "descripcion": "Vuelo de prueba no tripulado de la cápsula Orion alrededor de la Luna, primer paso del programa Artemis.",
+      "imagen_url": "https://upload.wikimedia.org/wikipedia/commons/6/66/Orion_Approaches_Moon_for_Outbound_Powered_Flyby.jpg",
+      "agencia_id": 1,
+      "cohete_id": 7
+    },
+    {
+      "id": 4,
+      "nombre": "Programa Apolo-Soyuz (ASTP)",
+      "fecha_lanzamiento": "1975-07-15",
+      "destino": "Órbita terrestre baja",
+      "estado": "completada",
+      "descripcion": "Primer acoplamiento en órbita entre una nave estadounidense y una soviética, símbolo de distensión en plena Guerra Fría.",
+      "imagen_url": "https://upload.wikimedia.org/wikipedia/commons/e/e2/Illustration_of_the_Apollo-Soyuz_Test_Project_by_Davis_Meltzer_%289401759%29.jpg",
+      "agencia_id": 3,
+      "cohete_id": 4
+    },
+    {
+      "id": 5,
+      "nombre": "Soyuz MS-25",
+      "fecha_lanzamiento": "2024-03-23",
+      "destino": "Estación Espacial Internacional",
+      "estado": "completada",
+      "descripcion": "Misión tripulada rusa de rotación de tripulación hacia la ISS.",
+      "imagen_url": "https://upload.wikimedia.org/wikipedia/commons/2/2e/Expedition_71_Soyuz_Blessing_%28NHQ202403200002%29.jpg",
+      "agencia_id": 3,
+      "cohete_id": 4
+    },
+    {
+      "id": 6,
+      "nombre": "Crew Dragon Demo-2",
+      "fecha_lanzamiento": "2020-05-30",
+      "destino": "Estación Espacial Internacional",
+      "estado": "completada",
+      "descripcion": "Primer vuelo orbital tripulado operado por una empresa privada, parte del Programa de Tripulación Comercial de la NASA.",
+      "imagen_url": "https://upload.wikimedia.org/wikipedia/commons/d/d1/Crew_Dragon_Demo2_approaching_ISS.png",
+      "agencia_id": 1,
+      "cohete_id": 2
+    },
+    {
+      "id": 7,
+      "nombre": "Perseverance (Mars 2020)",
+      "fecha_lanzamiento": "2020-07-30",
+      "destino": "Marte",
+      "estado": "en curso",
+      "descripcion": "Rover que busca signos de vida microbiana antigua en el cráter Jezero y recolecta muestras para un futuro retorno a la Tierra.",
+      "imagen_url": "https://upload.wikimedia.org/wikipedia/commons/7/71/PIA24261-MarsPerseveranceRover-SHERLOC-CalibrationTarget-20201208.jpg",
+      "agencia_id": 1,
+      "cohete_id": 6
+    },
+    {
+      "id": 8,
+      "nombre": "Voyager 1",
+      "fecha_lanzamiento": "1977-09-05",
+      "destino": "Espacio interestelar",
+      "estado": "en curso",
+      "descripcion": "Objeto hecho por el ser humano más lejano de la Tierra; cruzó al espacio interestelar en 2012 y sigue transmitiendo datos.",
+      "imagen_url": "https://upload.wikimedia.org/wikipedia/commons/6/60/Voyager_spacecraft_model.png",
+      "agencia_id": 1,
+      "cohete_id": 10
+    },
+    {
+      "id": 9,
+      "nombre": "Voyager 2",
+      "fecha_lanzamiento": "1977-08-20",
+      "destino": "Espacio interestelar",
+      "estado": "en curso",
+      "descripcion": "Única sonda en sobrevolar los cuatro gigantes gaseosos: Júpiter, Saturno, Urano y Neptuno.",
+      "imagen_url": "https://upload.wikimedia.org/wikipedia/commons/a/a4/Titan_3E_Centaur_launches_Voyager_2.jpg",
+      "agencia_id": 1,
+      "cohete_id": 10
+    },
+    {
+      "id": 10,
+      "nombre": "Chandrayaan-3",
+      "fecha_lanzamiento": "2023-07-14",
+      "destino": "Luna (polo sur)",
+      "estado": "completada",
+      "descripcion": "India se convirtió en el cuarto país en alunizar de forma controlada y el primero en hacerlo cerca del polo sur lunar.",
+      "imagen_url": "https://upload.wikimedia.org/wikipedia/commons/d/dc/VIKRAM%26PRAGYANMODEL.jpg",
+      "agencia_id": 4,
+      "cohete_id": 11
+    },
+    {
+      "id": 11,
+      "nombre": "Mangalyaan (Mars Orbiter Mission)",
+      "fecha_lanzamiento": "2013-11-05",
+      "destino": "Marte",
+      "estado": "completada",
+      "descripcion": "Primera misión asiática en alcanzar la órbita marciana y una de las más económicas jamás realizadas.",
+      "imagen_url": "https://upload.wikimedia.org/wikipedia/commons/c/cd/Mars_Orbiter_Mission_-_India_-_ArtistsConcept.jpg",
+      "agencia_id": 4,
+      "cohete_id": 8
+    },
+    {
+      "id": 12,
+      "nombre": "Juno",
+      "fecha_lanzamiento": "2011-08-05",
+      "destino": "Júpiter",
+      "estado": "en curso",
+      "descripcion": "Sonda en órbita polar que estudia la composición, el campo gravitatorio y la magnetosfera de Júpiter.",
+      "imagen_url": "https://upload.wikimedia.org/wikipedia/commons/a/ac/Illustration_of_Juno_spacecraft_at_Jupiter_%28PIA19639%29.jpg",
+      "agencia_id": 1,
+      "cohete_id": 6
+    },
+    {
+      "id": 13,
+      "nombre": "New Horizons",
+      "fecha_lanzamiento": "2006-01-19",
+      "destino": "Plutón y Cinturón de Kuiper",
+      "estado": "en curso",
+      "descripcion": "Realizó el primer sobrevuelo cercano de Plutón en 2015 y del objeto Arrokoth en 2019.",
+      "imagen_url": "https://upload.wikimedia.org/wikipedia/commons/a/ad/PIA19703-PlutoFlyby-NewHorizons-ArtistConcept-20150709.jpg",
+      "agencia_id": 1,
+      "cohete_id": 6
+    },
+    {
+      "id": 14,
+      "nombre": "Rosetta",
+      "fecha_lanzamiento": "2004-03-02",
+      "destino": "Cometa 67P/Churyumov-Gerasimenko",
+      "estado": "completada",
+      "descripcion": "Primera misión en orbitar un núcleo cometario y posar un módulo (Philae) sobre su superficie.",
+      "imagen_url": "https://upload.wikimedia.org/wikipedia/commons/c/c3/Rosetta_and_Philae_at_comet_%2811206660686%29.jpg",
+      "agencia_id": 2,
+      "cohete_id": 5
+    },
+    {
+      "id": 15,
+      "nombre": "Chang'e 5",
+      "fecha_lanzamiento": "2020-11-23",
+      "destino": "Luna",
+      "estado": "completada",
+      "descripcion": "Misión china de retorno de muestras lunares, la primera desde 1976.",
+      "imagen_url": "https://upload.wikimedia.org/wikipedia/commons/4/4e/Launch_of_Chang%27e_5.png",
+      "agencia_id": 7,
+      "cohete_id": 9
+    },
+    {
+      "id": 16,
+      "nombre": "Falcon Heavy Demo Flight",
+      "fecha_lanzamiento": "2018-02-06",
+      "destino": "Órbita heliocéntrica",
+      "estado": "completada",
+      "descripcion": "Vuelo de prueba inaugural del Falcon Heavy; lanzó un Tesla Roadster como carga simbólica.",
+      "imagen_url": "https://upload.wikimedia.org/wikipedia/commons/2/20/Elon_Musk%27s_Tesla_Roadster_%2840110304192%29.jpg",
+      "agencia_id": 6,
+      "cohete_id": 3
+    },
+    {
+      "id": 17,
+      "nombre": "Hayabusa2",
+      "fecha_lanzamiento": "2014-12-03",
+      "destino": "Asteroide Ryugu",
+      "estado": "completada",
+      "descripcion": "Recolectó muestras del asteroide Ryugu y las devolvió a la Tierra en una cápsula en 2020.",
+      "imagen_url": "https://upload.wikimedia.org/wikipedia/commons/9/9d/Hayabusa2_dropping_off_sample_return_capsule.jpg",
+      "agencia_id": 5,
+      "cohete_id": 12
+    }
+  ]
+}

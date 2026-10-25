@@ -1,0 +1,98 @@
+<script setup lang="ts">
+const { $api } = useNuxtApp()
+const auth = useAuth()
+
+const route = useRoute()
+const router = useRouter()
+const id = route.params.id as string
+
+const agencia = ref<any>(null)
+const editando = ref(false)
+const error = ref('')
+
+async function cargar() {
+  agencia.value = await $api(`/api/agencias/${id}`)
+}
+
+async function guardar() {
+  error.value = ''
+  try {
+    await $api(`/api/agencias/${id}`, { method: 'PUT', body: agencia.value })
+    editando.value = false
+    await cargar()
+  } catch (e: any) {
+    error.value = e?.data?.statusMessage || 'Error guardando la agencia'
+  }
+}
+
+async function borrar() {
+  if (!confirm('¿Borrar esta agencia?')) return
+  try {
+    await $api(`/api/agencias/${id}`, { method: 'DELETE' })
+    router.push('/agencias')
+  } catch (e: any) {
+    error.value = e?.data?.statusMessage || 'No se pudo borrar la agencia'
+  }
+}
+
+onMounted(cargar)
+
+useHead({ title: 'Agencia - Catálogo de misiones espaciales' })
+
+const campos = [
+  { key: 'nombre', label: 'Nombre', type: 'text' as const },
+  { key: 'pais', label: 'País', type: 'text' as const },
+  { key: 'anio_fundacion', label: 'Año de fundación', type: 'number' as const },
+  { key: 'sitio_web', label: 'Sitio web', type: 'text' as const },
+  { key: 'imagen_url', label: 'URL de imagen', type: 'text' as const }
+]
+</script>
+
+<template>
+  <main class="page" v-if="agencia">
+    <NuxtLink to="/agencias" class="back-link">&larr; Volver a agencias</NuxtLink>
+    <p v-if="error" class="error">{{ error }}</p>
+
+    <div v-if="!editando">
+      <h1>{{ agencia.nombre }}</h1>
+
+      <div class="detail">
+        <div class="detail-media">
+          <img v-if="agencia.imagen_url" :src="agencia.imagen_url" :alt="agencia.nombre" />
+        </div>
+        <div class="detail-info">
+          <p class="spec-row"><strong>País</strong> {{ agencia.pais }}</p>
+          <p class="spec-row"><strong>Año de fundación</strong> {{ agencia.anio_fundacion }}</p>
+          <p v-if="agencia.sitio_web" class="spec-row">
+            <strong>Sitio web</strong> <a :href="agencia.sitio_web" target="_blank" rel="noopener">{{ agencia.sitio_web }}</a>
+          </p>
+
+          <h3>Misiones de esta agencia</h3>
+          <ul v-if="agencia.misiones?.length" class="related-list">
+            <li v-for="m in agencia.misiones" :key="m.id">
+              <NuxtLink :to="`/misiones/${m.id}`">{{ m.nombre }}</NuxtLink>
+              <span>{{ m.fecha_lanzamiento }} &middot; {{ m.estado }}</span>
+            </li>
+          </ul>
+          <p v-else class="muted">Sin misiones registradas todavía.</p>
+        </div>
+      </div>
+
+      <div v-if="auth.autenticado.value" class="actions-row">
+        <button @click="editando = true">Editar</button>
+        <button v-if="auth.esAdmin.value" class="danger" @click="borrar">Borrar</button>
+      </div>
+    </div>
+
+    <section v-else class="form-panel">
+      <h2>Editar agencia</h2>
+      <form @submit.prevent="guardar">
+        <EntityForm v-model="agencia" :fields="campos" />
+        <div class="actions-row">
+          <button type="submit">Guardar</button>
+          <button type="button" class="secondary" @click="editando = false">Cancelar</button>
+        </div>
+      </form>
+    </section>
+  </main>
+</template>

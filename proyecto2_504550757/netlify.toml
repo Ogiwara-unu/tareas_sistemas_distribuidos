@@ -1,0 +1,65 @@
+[build]
+  command = "npm run generate"
+  publish = ".output/public"
+
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
+
+# Desarrollo local con `netlify dev`: levanta Nuxt y sirve las funciones en el mismo puerto.
+[dev]
+  command = "npm run dev"
+  targetPort = 3000
+  port = 8888
+  framework = "#custom"
+
+# Servicio REST: se mantienen las rutas del Proyecto 1 redirigiendo /api/* hacia las funciones.
+# Cada recurso es una función: /api/misiones[/:id] -> netlify/functions/misiones.mjs, etc.
+# `force = true` para que estas reglas siempre apliquen antes que cualquier archivo estático.
+[[redirects]]
+  from = "/api/misiones"
+  to = "/.netlify/functions/misiones"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/api/misiones/*"
+  to = "/.netlify/functions/misiones/:splat"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/api/agencias"
+  to = "/.netlify/functions/agencias"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/api/agencias/*"
+  to = "/.netlify/functions/agencias/:splat"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/api/cohetes"
+  to = "/.netlify/functions/cohetes"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/api/cohetes/*"
+  to = "/.netlify/functions/cohetes/:splat"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/api/auth/*"
+  to = "/.netlify/functions/auth/:splat"
+  status = 200
+  force = true
+
+# Frontend SPA (Vue/Nuxt): cualquier otra ruta que no sea un archivo estático se resuelve en el cliente.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
